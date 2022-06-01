@@ -7,6 +7,15 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container"><%= yield %> <%= render 'layouts/footer' %></div>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+      <!-- Linting errors -->
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <!-- Linting errors -->
+      <% end %>
+      <!-- Linting errors -->
+      <%= yield %> <%= render 'layouts/footer' %> <%= debug(params) if
+      Rails.env.development? %>
+    </div>
   </body>
 </html>

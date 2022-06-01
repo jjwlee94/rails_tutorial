@@ -1,3 +1,30 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(model: @user, local: true) do |f| %>
+    <!-- Linting errors -->
+    <%= render 'shared/error_messages' %>
+    <!-- Linting errors -->
+    <%= f.label :name %>
+    <!-- Linting errors -->
+    <%= f.text_field :name, class: 'form-control' %>
+    <!-- Linting errors -->
+    <%= f.label :email %>
+    <!-- Linting errors -->
+    <%= f.email_field :email, class: 'form-control' %>
+    <!-- Linting errors -->
+    <%= f.label :password %>
+    <!-- Linting errors -->
+    <%= f.password_field :password, class: 'form-control' %>
+    <!-- Linting errors -->
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <!-- Linting errors -->
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <!-- Linting errors -->
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <!-- Linting errors -->
+    <% end %>
+  </div>
+</div>
