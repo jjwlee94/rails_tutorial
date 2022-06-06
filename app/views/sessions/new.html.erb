@@ -13,6 +13,12 @@
     <!-- Linting errors -->
     <%= f.password_field :password, class: 'form-control' %>
     <!-- Linting errors -->
+    <%= f.label :remember_me, class: "checkbox inline" do %>
+    <!-- Linting errors -->
+    <%= f.check_box :remember_me %>
+    <span>Remember me on this computer</span>
+    <% end %>
+    <!-- Linting errors -->
     <%= f.submit "Log in", class: "btn btn-primary" %>
     <!-- Linting errors -->
     <% end %>
