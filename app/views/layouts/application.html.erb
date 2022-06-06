@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <%= render 'layouts/rails_default' %>
-  </head>
-  <body>
-    <%= render 'layouts/header' %>
+
+<head>
+  <title>
+    <%= full_title(yield(:title)) %>
+  </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%= render 'layouts/rails_default' %>
+</head>
+
+<body>
+  <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |message_type, message| %>
-      <!-- Linting errors -->
-      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <!-- Linting errors -->
-      <% end %>
-      <!-- Linting errors -->
-      <%= yield %> <%= render 'layouts/footer' %> <%= debug(params) if
-      Rails.env.development? %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}" ) %>
+          <% end %>
+            <%= yield %>
+              <%= render 'layouts/footer' %>
+                <%= debug(params) if Rails.env.development? %>
     </div>
-  </body>
+</body>
+
 </html>
